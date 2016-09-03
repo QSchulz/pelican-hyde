@@ -3,6 +3,7 @@
 {% block content %}
 <div class="post">
 	<h1 class="post-title">{{ article.title }}</h1>
+	{% if article.description %}<span class="post-date"><em>{{ article.description }}</em></span>{% endif %}
 	<span class="post-date">{{ article.locale_date }}</span>
 	{{ article.content }}
 	{% include 'fragments/disqus.html' %}

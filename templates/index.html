@@ -7,6 +7,7 @@
 				<h1 class="post-title" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}">
 					<a href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}">{{ article.title }}</a>
 				</h1>
+				{% if article.description %}<span class="post-date"><em>{{ article.description }}</em></span>{% endif %}
 				<span class="post-date">{{ article.locale_date }}</span>
 				<p>
 					{{ article.summary }}
