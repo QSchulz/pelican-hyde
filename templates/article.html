@@ -4,7 +4,7 @@
 <div class="post">
 	<h1 class="post-title">{{ article.title }}</h1>
 	{% if article.description %}<span class="post-date"><em>{{ article.description }}</em></span>{% endif %}
-	<span class="post-date">{{ article.locale_date }}</span>
+	<span class="post-date">{{ article.locale_date }}{% if article.translations %} <a href="{{ SITEURL }}/{{ article.url }}"><span class="flag-icon flag-icon-{{ article.lang }} flag-icon-squared"></span></a> {% for translation in article.translations %}<a href="{{ SITEURL }}/{{ translation.url }}"><span class="flag-icon flag-icon-{{ translation.lang }} flag-icon-squared"></span></a> {% endfor %}{% endif %}</span>
 	{{ article.content }}
 	{% include 'fragments/disqus.html' %}
 </div>
